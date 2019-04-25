@@ -13,7 +13,7 @@
 
 const recall = ({ predictions, expected, k = 3 }) => {
   if (k > predictions.length) {
-    throw new Error("k: longer than nb of results in predictions");
+    k = predictions.length;
   }
   const revelantFound = predictions
     .slice(0, k)

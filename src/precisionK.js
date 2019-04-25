@@ -17,6 +17,9 @@ Returns:
 
 const precisionK = ({ predictions, expected, k = 3 }) => {
   // check if result precise (positional)
+  if (k > predictions.length) {
+    k = predictions.length;
+  }
   const isPrecise = (expectId, i) => expectId === predictions[i];
   const relevant = expected.slice(0, k).filter(isPrecise).length;
   const precision = relevant / k;
