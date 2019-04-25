@@ -17,6 +17,9 @@ Returns:
 
 const precisionK = ({ predictions, expected, k = 3 }) => {
   // check if result precise (positional)
+  if (predictions.length === 0) {
+    return 0;
+  }
   if (k > predictions.length) {
     k = predictions.length;
   }

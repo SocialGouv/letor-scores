@@ -63,3 +63,12 @@ test("[1, 2, 3], [4, 5, 6], 3) == 0.0", () => {
     })
   ).toEqual(0.0);
 });
+test("empty predictions return 0", () => {
+  expect(
+    precisionK({
+      predictions: [],
+      expected: [4, 5, 6],
+      k: 3
+    })
+  ).toEqual(0.0);
+});
