@@ -12,6 +12,9 @@
 */
 
 const recall = ({ predictions, expected, k = 3 }) => {
+  if (predictions.length === 0) {
+    return 0;
+  }
   if (k > predictions.length) {
     k = predictions.length;
   }

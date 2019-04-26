@@ -23,9 +23,13 @@ const precisionK = ({ predictions, expected, k = 3 }) => {
   if (k > predictions.length) {
     k = predictions.length;
   }
-  const isPrecise = (expectId, i) => expectId === predictions[i];
-  const relevant = expected.slice(0, k).filter(isPrecise).length;
-  const precision = relevant / k;
+  const targetPredictions = predictions.slice(0, k);
+  const intersection = targetPredictions.filter(prediction =>
+    expected.includes(prediction)
+  );
+
+  const precision = intersection.length / targetPredictions.length;
+
   return precision;
 };
 
