@@ -27,13 +27,13 @@ test("higher k doesnt crash", () => {
 });
 
 test("ideal dcg is computed correctly: normalization makes effect", () => {
-  expect(dcg(fixtures.idealDcgHigh)).toEqual(1);
-  expect(dcg(fixtures.idealDcgHigh)).toEqual(dcg(fixtures.idealDcgLow));
+  expect(dcg(fixtures.idealDcgHigh)).toEqual(0.47619047619047616);
+  expect(dcg(fixtures.idealDcgLow)).toEqual(1);
 });
 
 test("dcg relative scores", () => {
-  expect(dcg(fixtures.relativeDcgLow)).toEqual(1);
-  expect(dcg(fixtures.relativeDcgLow)).toEqual(dcg(fixtures.relativeDcgHigh));
+  expect(dcg(fixtures.relativeDcgLow)).toEqual(0.6153846153846154);
+  expect(dcg(fixtures.relativeDcgHigh)).toEqual(0.8666666666666667);
 });
 
 test("dcg is not messed by additional results", () => {
@@ -51,4 +51,12 @@ test("one good result on first place should be ideal", () => {
 test("expectations are sorted", () => {
   expect(dcg(fixtures.sorted1)).toEqual(1);
   expect(dcg(fixtures.sorted1)).toEqual(dcg(fixtures.sorted2));
+});
+
+test("float", () => {
+  expect(dcg(fixtures.floatDcg)).toEqual(0.8940033906019785);
+});
+
+test("cdtn1", () => {
+  expect(dcg(fixtures.cdtn1)).toEqual(0.26499152349505367);
 });

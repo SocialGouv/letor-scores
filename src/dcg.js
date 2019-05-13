@@ -18,17 +18,17 @@ const dcg = ({ predictions, expectedScores, k = 3 }) => {
   const yScores = predictions.map(
     prediction => expectedScores[prediction] || 0
   );
+
   const computedDcg = computeDcg(yScores.slice(0, k));
 
-  const getIdealScore = key =>
-    predictions.includes(key) ? expectedScores[key] : 0;
-
   const idealScores = Object.keys(expectedScores)
-    .map(getIdealScore)
+    .map(key => expectedScores[key])
     .sort()
     .reverse();
 
   const idealDcg = computeDcg(idealScores.slice(0, k));
+
+  //console.log({ computedDcg, idealDcg, idealScores });
 
   return computedDcg / idealDcg || 0;
 };
