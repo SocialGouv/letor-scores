@@ -7,7 +7,7 @@
   "devDependencies": {
     "@socialgouv/eslint-config-recommended": "^0.6.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-jest": "^22.6.4",
     "jest-cli": "^24.7.1"
   },
   "jest": {
