@@ -1,5 +1,7 @@
 # letor-scores
 
+[![Build Status](https://travis-ci.com/SocialGouv/letor-scores.svg?branch=master)](https://travis-ci.com/SocialGouv/letor-scores)
+
 JavaScript port of https://github.com/ArmandGiraud/letor_scores
 
 ## Usage
