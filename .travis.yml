@@ -10,6 +10,7 @@ cache:
 
 install:
   - yarn --frozen-lockfile
-  
+
 script:
+  - yarn lint
   - yarn test --coverage

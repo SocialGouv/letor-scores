@@ -8,7 +8,8 @@
     "@socialgouv/eslint-config-recommended": "^0.7.2",
     "eslint": "^5.16.0",
     "eslint-plugin-jest": "^22.6.4",
-    "jest-cli": "^24.8.0"
+    "jest-cli": "^24.8.0",
+    "prettier": "^1.17.1"
   },
   "jest": {
     "verbose": true
@@ -17,6 +18,7 @@
     "compute-mean": "^3.0.0"
   },
   "scripts": {
+    "lint": "eslint src fixtures.js",
     "test": "jest"
   }
 }
