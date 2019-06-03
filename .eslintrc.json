@@ -1,4 +1,7 @@
 {
+  "env": {
+    "jest/globals": true
+  },
   "extends": ["@socialgouv/eslint-config-recommended"],
   "plugins": ["jest"]
 }
