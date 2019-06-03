@@ -12,9 +12,6 @@ const dcg = ({ predictions, expectedScores, k = 3 }) => {
     k = predictions.length;
   }
 
-  const isExpectedPrediction = prediction =>
-    Object.keys(expectedScores).includes(prediction);
-
   const yScores = predictions.map(
     prediction => expectedScores[prediction] || 0
   );

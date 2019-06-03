@@ -34,12 +34,6 @@ test("higher k doesnt crash", () => {
   ).not.toThrow();
 });
 
-test("higher k doesnt crash", () => {
-  expect(() =>
-    precisionK(format({ ...fixtures.goodRanking1, k: 5 }))
-  ).not.toThrow();
-});
-
 test("perfect results", () => {
   expect(precisionK(format({ ...fixtures.perfect1, k: 5 }))).not.toEqual(1);
 });
