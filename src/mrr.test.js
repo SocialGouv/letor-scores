@@ -54,4 +54,3 @@ test("goodRanking vs bad ranking", () => {
 test("higher k doesnt crash", () => {
   expect(() => mrr(format({ ...fixtures.goodRanking1, k: 5 }))).not.toThrow();
 });
-
