@@ -285,13 +285,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
-"@socialgouv/eslint-config-recommended@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@socialgouv/eslint-config-recommended/-/eslint-config-recommended-0.7.2.tgz#5912b92243ec41f5873e03934d3b151de09e32d3"
-  integrity sha512-thHUeOpLKaQYhPS7MscWOnrOG8AJTWJeWIZ1XRFy7iA3ol4GK0dUUHImOqzVbJU/AUr4ANKRPB300pbl79POvA==
+"@socialgouv/eslint-config-recommended@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@socialgouv/eslint-config-recommended/-/eslint-config-recommended-0.9.0.tgz#387c9ad4feeeffdc09a25a57a8adb8742c9b0d0d"
+  integrity sha512-KsS/il984vUlBvZrMaw1TSfMLdA40gD0eff6GiDsCOzRqRtcbOQh6t61R1EE18oJH2uJ3a9gIw/zEJeuRpzDhw==
   dependencies:
     eslint-config-prettier "~4.3.0"
-    eslint-plugin-import "~2.17.2"
+    eslint-plugin-import "~2.17.3"
     eslint-plugin-jest "^22.6.4"
     eslint-plugin-prettier "~3.1.0"
 
@@ -1153,7 +1153,7 @@ eslint-module-utils@^2.4.0:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
 
-eslint-plugin-import@~2.17.2:
+eslint-plugin-import@~2.17.3:
   version "2.17.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.17.3.tgz#00548b4434c18faebaba04b24ae6198f280de189"
   integrity sha512-qeVf/UwXFJbeyLbxuY8RgqDyEKCkqV7YC+E5S5uOjAp4tOc8zj01JP3ucoBM8JcEqd1qRasJSg6LLlisirfy0Q==
