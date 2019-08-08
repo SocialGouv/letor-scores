@@ -5,7 +5,7 @@
   "main": "./src",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@socialgouv/eslint-config-recommended": "^0.9.3",
+    "@socialgouv/eslint-config-recommended": "^0.9.4",
     "eslint": "^6.1.0",
     "eslint-plugin-jest": "^22.15.0",
     "jest-cli": "^24.8.0",
