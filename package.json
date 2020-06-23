@@ -8,7 +8,7 @@
     "@socialgouv/eslint-config-recommended": "^0.35.0",
     "eslint": "^7.3.1",
     "eslint-plugin-jest": "^23.17.1",
-    "jest-cli": "^26.0.1",
+    "jest-cli": "^26.1.0",
     "prettier": "^1.19.1"
   },
   "jest": {
