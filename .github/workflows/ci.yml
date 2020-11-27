@@ -75,6 +75,14 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Cache NPM packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
       - uses: actions/checkout@v2
 
       - name: Semantic Release
