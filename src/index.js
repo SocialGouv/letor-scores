@@ -4,8 +4,8 @@ const recall = require("./recall");
 const precisionK = require("./precisionK");
 
 module.exports = {
-  mrr,
   dcg,
+  mrr,
   precisionK,
-  recall
+  recall,
 };

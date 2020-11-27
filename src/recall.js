@@ -20,7 +20,7 @@ const recall = ({ predictions, expected, k = 3 }) => {
   }
   const revelantFound = predictions
     .slice(0, k)
-    .filter(prediction => expected.includes(prediction)).length;
+    .filter((prediction) => expected.includes(prediction)).length;
 
   return revelantFound / expected.length;
 };
