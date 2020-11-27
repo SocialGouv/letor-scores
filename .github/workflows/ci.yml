@@ -83,6 +83,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ matrix.node-version }}-npm
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node-version }}-npm
+
       - uses: actions/checkout@v2
 
       - name: Semantic Release
