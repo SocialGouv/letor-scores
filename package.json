@@ -1,7 +1,7 @@
 {
   "name": "@socialgouv/letor-scores",
   "description": "JavaScript port of https://github.com/ArmandGiraud/letor_scores",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./src",
   "license": "Apache-2.0",
   "devDependencies": {
