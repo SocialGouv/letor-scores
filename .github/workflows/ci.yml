@@ -64,7 +64,7 @@ jobs:
 
   Release:
     needs:
-      - build
+      - Test
     if: |
       github.event_name == 'push' &&
       github.repository == 'SocialGouv/letor-scores'
