@@ -56,7 +56,7 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn coverage
+        run: yarn test --coverage
 
       - name: Send test coverage to codecov
         continue-on-error: true
