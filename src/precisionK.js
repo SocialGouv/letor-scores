@@ -24,7 +24,7 @@ const precisionK = ({ predictions, expected, k = 3 }) => {
     k = predictions.length;
   }
   const targetPredictions = predictions.slice(0, k);
-  const intersection = targetPredictions.filter(prediction =>
+  const intersection = targetPredictions.filter((prediction) =>
     expected.includes(prediction)
   );
 

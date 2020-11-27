@@ -1,112 +1,45 @@
 module.exports = {
-  emptyPrediction: {
-    predictions: [],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
-  },
   badPrediction1: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 3,
     predictions: ["e", "f", "g", "h"],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
-  },
-  moreDocuments1: {
-    predictions: ["a", "f", "c", "h"],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
-  },
-  moreDocuments2: {
-    predictions: ["a", "f", "c", "h", "d", "b"],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
-  },
-  goodRanking1: {
-    predictions: ["a", "b", "d"],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
   },
   badRanking1: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 3,
     predictions: ["e", "a", "b", "d"],
+  },
+  cdtn1: {
+    expectedScores: {
+      "/code-du-travail/l1221-1": 5,
+      "/code-du-travail/l1221-2": 5,
+      "/code-du-travail/l1221-3": 5,
+    },
+    k: 3,
+    predictions: [
+      "/code-du-travail/l1132-1",
+      "/code-du-travail/l1221-2",
+      "/code-du-travail/l1225-9",
+    ],
+  },
+  emptyPrediction: {
     expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 3
-  },
-  goodRanking2: {
-    predictions: ["a", "b", "d"],
-    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
-    k: 5
-  },
-  idealDcgHigh: {
-    predictions: ["a", "b", "d"],
-    expectedScores: {
-      a: 5,
-      e: 8 // simultaneously assert e has no impact
-    },
-    k: 3
-  },
-  idealDcgLow: {
-    predictions: ["a", "b", "d"],
-    expectedScores: {
-      a: 1
-    },
-    k: 3
-  },
-  relativeDcgLow: {
-    predictions: ["a", "b"],
-    expectedScores: {
-      a: 3,
-      b: 2,
-      c: 5
-    },
-    k: 3
-  },
-  relativeDcgHigh: {
-    predictions: ["a", "b"],
-    expectedScores: {
-      a: 5,
-      b: 3,
-      c: 5
-    },
-    k: 3
-  },
-  perfect1: {
-    predictions: ["a", "e", "f", "g", "b"],
-    expectedScores: { a: 5, b: 3 },
-    k: 2
-  },
-  perfectPrecision1: {
-    predictions: ["a", "g"],
-    expectedScores: { a: 5, e: 5, f: 5, g: 5, b: 3 },
-    k: 2
-  },
-  perfectPrecisionGood: {
-    predictions: ["d", "a", "w"],
-    expectedScores: { a: 5, w: 3 },
-    k: 2
-  },
-  perfectPrecisionBad: {
-    predictions: ["d", "w", "a"],
-    expectedScores: { a: 5, w: 3 },
-    k: 2
-  },
-  oneGoodResult: {
-    predictions: ["a", "b", "d"],
-    expectedScores: { a: 5 },
-    k: 2
-  },
-  sorted1: {
-    predictions: ["a", "b", "w"],
-    expectedScores: { a: 3, b: 2, c: 1 },
-    k: 2
-  },
-  sorted2: {
-    predictions: ["a", "b", "w"],
-    expectedScores: {
-      a: 3,
-      c: 1,
-      b: 2
-    },
-    k: 2
+    k: 3,
+    predictions: [],
   },
   floatDcg: {
+    expectedScores: {
+      "/fiche-ministere-travail/la-periode-dessai-peut-elle-etre-rompue": 5,
+      "/fiche-ministere-travail/la-periode-dessai-quelle-est-la-duree-de-la-periode-dessai": 1,
+      "/fiche-ministere-travail/le-contrat-de-professionnalisation-quelles-sont-les-modalites-de-rupture-du-contrat-de-professionnalisation-et-quelles-sont-les-demarches-a-effectuer": 1,
+      "/fiche-service-public/periode-dessai": 3,
+      "/fiche-service-public/quest-ce-quune-periode-probatoire-pour-le-salarie": 2,
+      "/fiche-service-public/rupture-conventionnelle": 1,
+      "/modeles-de-courriers/rupture-de-periode-dessai": 5,
+      "/modeles-de-courriers/rupture-du-contrat-en-periode-dessai": 5,
+      "/themes/rupture-de-contrat": 1,
+    },
+    k: 3,
     predictions: [
       "/modeles-de-courriers/rupture-de-periode-dessai",
       "/fiche-service-public/periode-dessai",
@@ -132,32 +65,99 @@ module.exports = {
       "/code-du-travail/l1237-18-2",
       "/code-du-travail/l1242-11",
       "/fiche-ministere-travail/contrat-starter-que-se-passe-t-il-en-cas-de-rupture-dun-contrat-starter",
-      "/fiche-ministere-travail/la-rupture-conventionnelle-du-contrat-de-travail-a-duree-indeterminee-en-quoi-consiste-la-rupture-conventionnelle"
+      "/fiche-ministere-travail/la-rupture-conventionnelle-du-contrat-de-travail-a-duree-indeterminee-en-quoi-consiste-la-rupture-conventionnelle",
     ],
-    expectedScores: {
-      "/modeles-de-courriers/rupture-de-periode-dessai": 5,
-      "/modeles-de-courriers/rupture-du-contrat-en-periode-dessai": 5,
-      "/fiche-ministere-travail/la-periode-dessai-peut-elle-etre-rompue": 5,
-      "/fiche-service-public/periode-dessai": 3,
-      "/fiche-service-public/quest-ce-quune-periode-probatoire-pour-le-salarie": 2,
-      "/fiche-service-public/rupture-conventionnelle": 1,
-      "/fiche-ministere-travail/le-contrat-de-professionnalisation-quelles-sont-les-modalites-de-rupture-du-contrat-de-professionnalisation-et-quelles-sont-les-demarches-a-effectuer": 1,
-      "/themes/rupture-de-contrat": 1,
-      "/fiche-ministere-travail/la-periode-dessai-quelle-est-la-duree-de-la-periode-dessai": 1
-    },
-    k: 3
   },
-  cdtn1: {
-    predictions: [
-      "/code-du-travail/l1132-1",
-      "/code-du-travail/l1221-2",
-      "/code-du-travail/l1225-9"
-    ],
+  goodRanking1: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 3,
+    predictions: ["a", "b", "d"],
+  },
+  goodRanking2: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 5,
+    predictions: ["a", "b", "d"],
+  },
+  idealDcgHigh: {
     expectedScores: {
-      "/code-du-travail/l1221-1": 5,
-      "/code-du-travail/l1221-2": 5,
-      "/code-du-travail/l1221-3": 5
+      a: 5,
+      e: 8, // simultaneously assert e has no impact
     },
-    k: 3
-  }
+    k: 3,
+    predictions: ["a", "b", "d"],
+  },
+  idealDcgLow: {
+    expectedScores: {
+      a: 1,
+    },
+    k: 3,
+    predictions: ["a", "b", "d"],
+  },
+  moreDocuments1: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 3,
+    predictions: ["a", "f", "c", "h"],
+  },
+  moreDocuments2: {
+    expectedScores: { a: 4, b: 2, c: 2, d: 1 },
+    k: 3,
+    predictions: ["a", "f", "c", "h", "d", "b"],
+  },
+  oneGoodResult: {
+    expectedScores: { a: 5 },
+    k: 2,
+    predictions: ["a", "b", "d"],
+  },
+  perfect1: {
+    expectedScores: { a: 5, b: 3 },
+    k: 2,
+    predictions: ["a", "e", "f", "g", "b"],
+  },
+  perfectPrecision1: {
+    expectedScores: { a: 5, b: 3, e: 5, f: 5, g: 5 },
+    k: 2,
+    predictions: ["a", "g"],
+  },
+  perfectPrecisionBad: {
+    expectedScores: { a: 5, w: 3 },
+    k: 2,
+    predictions: ["d", "w", "a"],
+  },
+  perfectPrecisionGood: {
+    expectedScores: { a: 5, w: 3 },
+    k: 2,
+    predictions: ["d", "a", "w"],
+  },
+  relativeDcgHigh: {
+    expectedScores: {
+      a: 5,
+      b: 3,
+      c: 5,
+    },
+    k: 3,
+    predictions: ["a", "b"],
+  },
+  relativeDcgLow: {
+    expectedScores: {
+      a: 3,
+      b: 2,
+      c: 5,
+    },
+    k: 3,
+    predictions: ["a", "b"],
+  },
+  sorted1: {
+    expectedScores: { a: 3, b: 2, c: 1 },
+    k: 2,
+    predictions: ["a", "b", "w"],
+  },
+  sorted2: {
+    expectedScores: {
+      a: 3,
+      b: 2,
+      c: 1,
+    },
+    k: 2,
+    predictions: ["a", "b", "w"],
+  },
 };

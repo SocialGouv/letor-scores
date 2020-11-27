@@ -3,9 +3,9 @@ const { recall } = require(".");
 const fixtures = require("../fixtures");
 
 // add "expected" key from the fixtures expectedScores
-const format = fixture => ({
+const format = (fixture) => ({
   ...fixture,
-  expected: Object.keys(fixture.expectedScores)
+  expected: Object.keys(fixture.expectedScores),
 });
 
 test("emptyPrediction", () => {
@@ -48,9 +48,9 @@ test("perfect precision", () => {
 test("[1, 2, 3], [1], k = 1) == 1", () => {
   expect(
     recall({
-      predictions: [1, 2, 3],
       expected: [1],
-      k: 1
+      k: 1,
+      predictions: [1, 2, 3],
     })
   ).toEqual(1);
 });
@@ -58,9 +58,9 @@ test("[1, 2, 3], [1], k = 1) == 1", () => {
 test("[1, 2, 3], [9], k = 1) == 0", () => {
   expect(
     recall({
-      predictions: [1, 2, 3],
       expected: [9],
-      k: 1
+      k: 1,
+      predictions: [1, 2, 3],
     })
   ).toEqual(0);
 });
@@ -68,9 +68,9 @@ test("[1, 2, 3], [9], k = 1) == 0", () => {
 test("[1, 2, 3], [1], k = 3) == 1", () => {
   expect(
     recall({
-      predictions: [1, 2, 3],
       expected: [1],
-      k: 3
+      k: 3,
+      predictions: [1, 2, 3],
     })
   ).toEqual(1);
 });
@@ -78,9 +78,9 @@ test("[1, 2, 3], [1], k = 3) == 1", () => {
 test("[1, 2, 3], [3, 1], k = 1) == 1/2", () => {
   expect(
     recall({
-      predictions: [1, 2, 3],
       expected: [3, 1],
-      k: 1
+      k: 1,
+      predictions: [1, 2, 3],
     })
   ).toEqual(1 / 2);
 });
@@ -88,9 +88,9 @@ test("[1, 2, 3], [3, 1], k = 1) == 1/2", () => {
 test("[1, 2, 3], [3, 1, 4], k = 2) == 1/3", () => {
   expect(
     recall({
-      predictions: [1, 2, 3],
       expected: [3, 1, 4],
-      k: 2
+      k: 2,
+      predictions: [1, 2, 3],
     })
   ).toEqual(1 / 3);
 });

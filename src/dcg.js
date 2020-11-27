@@ -1,6 +1,6 @@
-const sum = arr => arr.reduce((a, c) => a + c, 0);
+const sum = (arr) => arr.reduce((a, c) => a + c, 0);
 
-const computeDcg = predictions =>
+const computeDcg = (predictions) =>
   sum(predictions.map((prediction, i) => prediction / (Math.log2(i + 1) + 1)));
 
 const dcg = ({ predictions, expectedScores, k = 3 }) => {
@@ -13,13 +13,13 @@ const dcg = ({ predictions, expectedScores, k = 3 }) => {
   }
 
   const yScores = predictions.map(
-    prediction => expectedScores[prediction] || 0
+    (prediction) => expectedScores[prediction] || 0
   );
 
   const computedDcg = computeDcg(yScores.slice(0, k));
 
   const idealScores = Object.keys(expectedScores)
-    .map(key => expectedScores[key])
+    .map((key) => expectedScores[key])
     .sort()
     .reverse();
 

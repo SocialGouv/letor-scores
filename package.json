@@ -8,7 +8,7 @@
     "@socialgouv/eslint-config-recommended": "^1.32.0",
     "eslint": "^7.9.0",
     "jest": "^26.4.2",
-    "prettier": "^1.19.1"
+    "prettier": "^2.2.0"
   },
   "jest": {
     "verbose": true
