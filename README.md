@@ -1,6 +1,8 @@
 # letor-scores
 
-[![Build Status](https://travis-ci.com/SocialGouv/letor-scores.svg?branch=master)](https://travis-ci.com/SocialGouv/letor-scores)
+[![Github Master CI Status](https://github.com/SocialGouv/letor-scores/workflows/CI/badge.svg?branch=master)](https://github.com/SocialGouv/letor-scores/actions/)
+[![codecov](https://codecov.io/gh/SocialGouv/letor-scores/branch/master/graph/badge.svg)](https://codecov.io/gh/SocialGouv/letor-scores)
+[![NPM version](http://img.shields.io/npm/v/@socialgouv/letor-scores.svg)](https://npmjs.org/package/@socialgouv/letor-scores)
 
 JavaScript port of https://github.com/ArmandGiraud/letor_scores
 
