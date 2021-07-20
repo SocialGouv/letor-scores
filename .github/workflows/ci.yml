@@ -5,49 +5,16 @@ on:
 
 jobs:
   Test:
-    strategy:
-      matrix:
-        node-version:
-          - 14.x
-          - 15.x
-
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get yarn cache directory path
-        id: init
-        shell: bash
-        run: |
-          echo "::set-output name=yarn_cache::$(yarn cache dir)"
-          #
-          echo "Node $(node --version)"
-          echo "Yarn $(yarn --version)"
-
       - uses: actions/checkout@v2
 
-      - name: Cache Yarn packages
-        id: yarn_cache_packages
-        uses: actions/cache@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          path: ${{ steps.init.outputs.yarn_cache }}
-          key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn_cache-
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-yarn-
+          node-version: lts/*
+          cache: yarn
 
       - name: Installing
         run: yarn --frozen-lockfile --link-duplicates --perfer-offline
@@ -60,7 +27,7 @@ jobs:
 
       - name: Send test coverage to codecov
         continue-on-error: true
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
 
   Release:
     needs:
@@ -70,28 +37,12 @@ jobs:
       github.repository == 'SocialGouv/letor-scores'
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: 14.x
-
-      - name: Cache NPM packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-${{ matrix.node-version }}-npm
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-npm
-
       - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: lts/*
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
